@@ -8,13 +8,23 @@ import axios from 'axios'
 import { debounce } from 'throttle-debounce'
 import { useHistory, Link } from 'react-router-dom';
 
-export const ClientHome= () => {
+export const BoardMain= () => {
     return (<>
-    <br/>
-    <h1> 고객관리 홈 </h1>
-    <P><a href='#' id="client-list">고객정보 보기</a></P>
-    <P><a href='#' id="client-insert">고객정보 입력</a></P>
+    
+        <title>방문자 리뷰</title>
+
+    <div class="container">
+    <h2>방문자 리뷰</h2>
+    <ul class="list-group">
+        <li class="list-group-item">
+            <a href="#" id="write">리뷰 쓰기</a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" id="list">리뷰 리스트</a>
+        </li>
+    </ul>
+    </div>
+
+
     </>)
 }
-
-

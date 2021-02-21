@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
-//import { useDispatch, useSelector } from 'react-redux'
-//import axios from 'axios'
-//import { debounce } from 'throttle-debounce'
-//import { useHistory, Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux'
+import axios from 'axios'
+import { debounce } from 'throttle-debounce'
+import { useHistory, Link } from 'react-router-dom';
 
-export const AddPlace= () => {
+export const PlaceAdd= () => {
     return (<>
     <table>
 	    <tr>
@@ -32,6 +32,7 @@ export const AddPlace= () => {
 	    	<td><input id="placeImage" type="text" value="http://www.knps.or.kr/portal/images/park/k_img.jpg"/></td>
 	    </tr>
     </table>
+    <button id="add-btn">추가하기</button>
     
     </>)
 }
