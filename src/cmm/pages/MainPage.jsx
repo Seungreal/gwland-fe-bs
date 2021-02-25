@@ -1,6 +1,16 @@
-import React from 'react'
+import React from "react";
+import {Banner,Dest,Counter,About,Recom,Testimonial,Gallery,Latest,Subscribe} from './index'
 
-
-export const MainPage = () => (<><h1>메인 페이지</h1></>)
-
-export default MainPage;
+export const MainPage = () => {
+    return <>
+        <div className="content-body">
+            <Banner/>
+            <Dest/>
+            <Counter/>
+            <About/>
+            <Recom/>
+            <Gallery/>
+            <Subscribe/>
+        </div>
+    </>
+}

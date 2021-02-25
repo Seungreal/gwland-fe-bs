@@ -1,5 +1,2 @@
-export { ClientDetail } from './ClientDetail'
-export { ClientHome } from './ClientHome'
-export { ClientInsert } from './ClientInsert'
-export { ClientList } from './ClientList'
-export { ClientUpdate } from './ClientUpdate'
+export { ClientIndex } from './ClientIndex'
+

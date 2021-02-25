@@ -1,31 +1,76 @@
-import React, { useState, useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import axios from 'axios'
-import { debounce } from 'throttle-debounce'
-import { useHistory, Link } from 'react-router-dom';
+import React from 'react'
 
-export const BoardWrite= () => {
-    return (<>
-    
-    <div class="container">
-	<h4 class="main"><a href="#" id="home">리뷰 메인</a></h4>
-		<h1>리뷰쓰기</h1>
-		<form>
-			<div>
-				<label for="writer">작성자</label> 
-                <input id="writerId" type="text"
-					name="bdwriter" class="form-control mt-4 mb-2" placeholder="작성자 입력"
-					required/><br />
-			</div>
-			<div class="form-group">
-				<label for="content">리뷰</label>
-				<textarea id="content" class="form-control" rows="10"
-					name="bdContent" placeholder="리뷰입력" required></textarea>
-			</div>
-			<button type="submit" id="write-btn" class="btn btn-secondary mb-3">저장</button>
-			<button type="reset" id="cancel-btn" class="btn btn-secondary mb-3">취소</button>
-		</form>
-	</div>
-
-    </>)
+export const ReviewWrite = ()=>{
+    return <div className="container">
+    <div className="row">
+      <div className="col-md-12">
+        <h4 className="trans-uppercase mb-10">Write a review</h4>
+        <div className="cws_divider mb-30"></div>
+      </div>
+    </div>
+    <div className="review-content pattern relative">
+      <div className="row">
+        <div className="col-md-5 mb-md-30 mb-xs-0">
+          <div className="review-total"><img src="/pic/blog/120x120.jpg" data-at2x="pic/blog/120x120@2x.jpg" alt/>
+            <div className="review-total-content">
+              <h6>Hotel Bohemians</h6>
+              <div className="stars stars-4"></div>
+              <ul className="icon">
+                <li>Istanbul, Turkey<i className="flaticon-suntour-map"></i></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div className="col-md-7">
+          <div className="review-marks clearfix mb-30">
+            <ul>
+              <li>Cleanliness
+                <div className="stars stars-5"></div>
+              </li>
+              <li>Location
+                <div className="stars stars-5"></div>
+              </li>
+              <li>Staff
+                <div className="stars stars-5"></div>
+              </li>
+              <li>Free Wi-Fi
+                <div className="stars stars-5"></div>
+              </li>
+            </ul>
+            <ul>
+              <li>Comfort
+                <div className="stars stars-5"></div>
+              </li>
+              <li>Facilities
+                <div className="stars stars-5"></div>
+              </li>
+              <li>Value for money
+                <div className="stars stars-5"></div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <form className="form clearfix">
+        <div className="row">
+          <div className="col-md-4">
+            <input type="text" name="email" value="" size="40" placeholder="First Name" aria-required="true" className="form-row form-row-first"/>
+          </div>
+          <div className="col-md-4">
+            <input type="text" name="email" value="" size="40" placeholder="Last Name" aria-required="true" className="form-row form-row-first"/>
+          </div>
+          <div className="col-md-4">
+            <input type="text" name="email" value="" size="40" placeholder="Booking Number" aria-required="true" className="form-row form-row-first"/>
+          </div>
+          <div className="col-md-12">
+            <input type="text" name="password" value="" size="40" placeholder="Title of your review" aria-required="true" className="form-row form-row-last"/>
+          </div>
+          <div className="col-md-12">
+            <textarea name="message" cols="40" rows="4" placeholder="Message of your review" aria-invalid="false" aria-required="true" className="mb-20"></textarea>
+            <input type="submit" value="Add a review" className="cws-button alt float-right"/>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
 }
