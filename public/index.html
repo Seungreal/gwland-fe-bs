@@ -1,21 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Web site created using create-react-app"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script type="text/javascript" src="https://static.nid.naver.com/js/naverLogin_implicit-1.0.3.js" charset="utf-8"></script>
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using create-react-app" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+  <!--
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <!--
       Notice the use of %PUBLIC_URL% in the tags above.
       It will be replaced with the URL of the `public` folder during the build.
       Only files inside the `public` folder can be referenced from the HTML.
@@ -24,26 +22,27 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>GangWonTour</title>
-    <link rel="stylesheet" href="/css/reset.css">
-    <link rel="stylesheet" href="/css/bootstrap.css">
-    <link rel="stylesheet" href="/css/font-awesome.css">
-    <link rel="stylesheet" href="/css/owl.carousel.css">
-    <link rel="stylesheet" href="/css/jquery.fancybox.css">
-    <link rel="stylesheet" href="/fonts/fi/flaticon.css">
-    <link rel="stylesheet" href="/css/flexslider.css">
-    <link rel="stylesheet" href="/css/main.css">
-    <link rel="stylesheet" href="/css/indent.css">
-    <link rel="stylesheet" href="/rs-plugin/css/settings.css">
-    <link rel="stylesheet" href="/rs-plugin/css/layers.css">
-    <link rel="stylesheet" href="/rs-plugin/css/navigation.css">
-    <link rel="stylesheet" href="/tuner/css/colorpicker.css">
-    <link rel="stylesheet" href="/tuner/css/styles.css">
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
+  <title>GangWonTour</title>
+  <link rel="stylesheet" href="/css/reset.css">
+  <link rel="stylesheet" href="/css/bootstrap.css">
+  <link rel="stylesheet" href="/css/font-awesome.css">
+  <link rel="stylesheet" href="/css/owl.carousel.css">
+  <link rel="stylesheet" href="/css/jquery.fancybox.css">
+  <link rel="stylesheet" href="/fonts/fi/flaticon.css">
+  <link rel="stylesheet" href="/css/flexslider.css">
+  <link rel="stylesheet" href="/css/main.css">
+  <link rel="stylesheet" href="/css/indent.css">
+  <link rel="stylesheet" href="/rs-plugin/css/settings.css">
+  <link rel="stylesheet" href="/rs-plugin/css/layers.css">
+  <link rel="stylesheet" href="/rs-plugin/css/navigation.css">
+  <link rel="stylesheet" href="/tuner/css/colorpicker.css">
+  <link rel="stylesheet" href="/tuner/css/styles.css">
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.
 
@@ -53,40 +52,42 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <script src="https://www.youtube.com/player_api"></script>
-    <script type="text/javascript" src="/js/jquery.min.js"></script>
-    <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
-    <script type="text/javascript" src="/js/bootstrap.js"></script>
-    <script type="text/javascript" src="/js/owl.carousel.js"></script>
-    <script type="text/javascript" src="/js/jquery.sticky.js"></script>
-    <script type="text/javascript" src="/js/TweenMax.min.js"></script>
-    <script type="text/javascript" src="/js/cws_parallax.js"></script>
-    <script type="text/javascript" src="/js/jquery.fancybox.pack.js"></script>
-    <script type="text/javascript" src="/js/jquery.fancybox-media.js"></script>
-    <script type="text/javascript" src="/js/isotope.pkgd.min.js"></script>
-    <script type="text/javascript" src="/js/imagesloaded.pkgd.min.js"></script>
-    <script type="text/javascript" src="/js/masonry.pkgd.min.js"></script>
-    <script type="text/javascript" src="/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
-    <script type="text/javascript" src="/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
-    <script type="text/javascript" src="/rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
-    <script type="text/javascript" src="/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>
-    <script type="text/javascript" src="/rs-plugin/js/extensions/revolution.extension.navigation.min.js"></script>
-    <script type="text/javascript" src="/rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>
-    <script type="text/javascript" src="/rs-plugin/js/extensions/revolution.extension.video.min.js"></script>
-    <script type="text/javascript" src="/rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>
-    <script type="text/javascript" src="/rs-plugin/js/extensions/revolution.extension.kenburn.min.js"></script>
-    <script type="text/javascript" src="/rs-plugin/js/extensions/revolution.extension.migration.min.js"></script>
-    <script type="text/javascript" src="/js/jquery.validate.min.js"></script>
-    <script type="text/javascript" src="/js/jquery.form.min.js"></script>
-    <script type="text/javascript" src="/js/script.js"></script>
-    <script type="text/javascript" src="/js/bg-video/cws_self_vimeo_bg.js"></script>
-    <script type="text/javascript" src="/js/bg-video/jquery.vimeo.api.min.js"></script>
-    <script type="text/javascript" src="/js/bg-video/cws_YT_bg.js"></script>
-    <script type="text/javascript" src="/js/jquery.tweet.js"></script>
-    <script type="text/javascript" src="/js/jquery.scrollTo.min.js"></script>
-    <script type="text/javascript" src="/js/jquery.flexslider.js"></script>
-    <script type="text/javascript" src="/tuner/js/colorpicker.js"></script>
-    <script type="text/javascript" src="/tuner/js/scripts.js"></script>
-    <script type="text/javascript" src="/js/retina.min.js"></script>
-  </body>
+  <script src="https://www.youtube.com/player_api"></script>
+  <script type="text/javascript" src="/js/jquery.min.js"></script>
+  <script type="text/javascript" src="/js/jquery-ui.min.js"></script>
+  <script type="text/javascript" src="/js/bootstrap.js"></script>
+  <script type="text/javascript" src="/js/owl.carousel.js"></script>
+  <script type="text/javascript" src="/js/jquery.sticky.js"></script>
+  <script type="text/javascript" src="/js/TweenMax.min.js"></script>
+  <script type="text/javascript" src="/js/cws_parallax.js"></script>
+  <script type="text/javascript" src="/js/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="/js/jquery.fancybox-media.js"></script>
+  <script type="text/javascript" src="/js/isotope.pkgd.min.js"></script>
+  <script type="text/javascript" src="/js/imagesloaded.pkgd.min.js"></script>
+  <script type="text/javascript" src="/js/masonry.pkgd.min.js"></script>
+  <script type="text/javascript" src="/rs-plugin/js/jquery.themepunch.tools.min.js"></script>
+  <script type="text/javascript" src="/rs-plugin/js/jquery.themepunch.revolution.min.js"></script>
+  <script type="text/javascript" src="/rs-plugin/js/extensions/revolution.extension.slideanims.min.js"></script>
+  <script type="text/javascript" src="/rs-plugin/js/extensions/revolution.extension.layeranimation.min.js"></script>
+  <script type="text/javascript" src="/rs-plugin/js/extensions/revolution.extension.navigation.min.js"></script>
+  <script type="text/javascript" src="/rs-plugin/js/extensions/revolution.extension.parallax.min.js"></script>
+  <script type="text/javascript" src="/rs-plugin/js/extensions/revolution.extension.video.min.js"></script>
+  <script type="text/javascript" src="/rs-plugin/js/extensions/revolution.extension.actions.min.js"></script>
+  <script type="text/javascript" src="/rs-plugin/js/extensions/revolution.extension.kenburn.min.js"></script>
+  <script type="text/javascript" src="/rs-plugin/js/extensions/revolution.extension.migration.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.validate.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.form.min.js"></script>
+  <script type="text/javascript" src="/js/script.js"></script>
+  <script type="text/javascript" src="/js/bg-video/cws_self_vimeo_bg.js"></script>
+  <script type="text/javascript" src="/js/bg-video/jquery.vimeo.api.min.js"></script>
+  <script type="text/javascript" src="/js/bg-video/cws_YT_bg.js"></script>
+  <script type="text/javascript" src="/js/jquery.tweet.js"></script>
+  <script type="text/javascript" src="/js/jquery.scrollTo.min.js"></script>
+  <script type="text/javascript" src="/js/jquery.flexslider.js"></script>
+  <script type="text/javascript" src="/tuner/js/colorpicker.js"></script>
+  <script type="text/javascript" src="/tuner/js/scripts.js"></script>
+  <script type="text/javascript" src="/js/retina.min.js"></script>
+  
+</body>
+
 </html>
