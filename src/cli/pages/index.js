@@ -1,3 +1,3 @@
 export { ClientIndex } from './ClientIndex'
-export { Sidebar } from '../../cmm/pages/Sidebar'
+export { Sidebar } from '../../cmm/pages/Sidebar' 
 
