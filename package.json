@@ -5,11 +5,15 @@
   "dependencies": {
     "@material-ui/core": "^4.11.2",
     "@material-ui/icons": "^4.11.2",
+    "@material-ui/styles": "^5.0.0-alpha.26",
     "@reduxjs/toolkit": "^1.5.0",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
     "axios": "^0.21.1",
+    "cors": "^2.8.5",
+    "http-proxy-middleware": "^1.0.6",
+    "http-server": "^0.12.3",
     "markdown-to-jsx": "^7.1.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -52,5 +56,6 @@
     "redux": "^4.0.5",
     "redux-saga": "^1.1.3",
     "throttle-debounce": "^3.0.1"
-  }
+  },
+  "proxy": "http://localhost:8080"
 }
