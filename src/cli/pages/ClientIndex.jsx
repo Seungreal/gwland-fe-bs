@@ -28,13 +28,14 @@ export const ClientIndex = () => {
       <input type="submit" value="고객정보 입력" className="cws-button alt" />
     </center>
     <ul>
-     <center>
+
     {client.map(i=>(
       <li key = {i.cliNum}>
         {i.cliName}
       </li>
     ))}
-    </center>
+
+
     </ul>
   </div>
   </>
