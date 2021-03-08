@@ -14,7 +14,7 @@ export const ClientInsert = () => {
     return (<>
     <center/>
 <table border="1" >
-<caption><b><br/>고객정보 저장</b></caption>
+<caption><b><br/>고객정보 저장</b></caption> 
  <colgroup>
   <col width="100"/>
   <col width="100"/>
