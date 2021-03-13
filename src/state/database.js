@@ -199,6 +199,7 @@ const database = {
       name: "관리자",
       url: "/manage",
     },
+    
   ],
   partners: [logotype, logotype, logotype, logotype, logotype, logotype],
   portfolio: [

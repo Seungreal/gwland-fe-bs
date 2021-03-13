@@ -15,10 +15,14 @@ import Course from './webapp/crs/pages/Course'
 import PlaceList from './webapp/pce/pages/PlaceList'
 import PlaceDetail from './webapp/pce/pages/PlaceDetail'
 import Manage from './webapp/cmm/pages/Manage'
-import { Header, Sidebar, Footer } from "./components/layouts";
-import { ModalForm, ModalVideo, RequestForm } from "./components/ui";
+import Header from "./webapp/cmm/pages/Header"
+import { Sidebar, Footer } from "./components/layouts";
+import { ModalVideo, RequestForm } from "./components/ui";
 import { Spinner } from "./components/elements";
 import { useCustomState } from "./state/state";
+import ContactForm from "webapp/cli/pages/ContactForm";
+import ModalForm from './webapp/cli/ModalForm/ModalForm'
+
 
 export default () => {
   const [state, actions] = useCustomState();
@@ -51,6 +55,7 @@ export default () => {
             </Route>
             <Route path="/blog/:post_id" exact component={PlaceDetail} />
             <Route path="/manage" exact component={Manage} />
+            <Route path="/Join" exact component={ContactForm}/>
             
             
             
