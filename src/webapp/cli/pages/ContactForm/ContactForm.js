@@ -4,7 +4,10 @@ import styles from "./ContactForm.module.scss";
 import CardButton from "../../CardButton/CardButton";
 import { Spinner } from "components/elements";
 
+
+  
 export default ({ style }) => {
+  
   const [sending, setSending] = useState(false);
   const [status, setStatus] = useState("");
   const [error, setError] = useState(false);
@@ -85,6 +88,7 @@ export default ({ style }) => {
   );
 
   return (
+    
     <form style={style} className={styles.wrapper}>
       {loading}
       <CardButton
@@ -100,25 +104,28 @@ export default ({ style }) => {
           <span className={[styles.status, error && styles.error].join(" ")}>
             {status}
           </span>
-            <div>
-              <img class="coreRegHeaderImage" src="https://static.tacdn.com/img2/brand_refresh/Tripadvisor_Logo_dark-bg_circle-green_horizontal-lockup_registered_RGB.svg" alt="TripAdvisor" />
+            <center>
+              <h2>Triport<br/></h2>
+            </center>
+            <div className={styles.brand_img}>
+              <img class="coreRegHeaderImage" src="https://postfiles.pstatic.net/MjAyMTAzMTVfMTk0/MDAxNjE1Nzg3MTUwNjIz.LaUs3o87AtC_cVRDlkN4UstfxM3Hs3l9jcbrDlsw_jEg.tvGYHUME5Upi2hfu-gZpdgv8DaEEDYXHUvdm_DK5uIIg.PNG.qkrtnghsla/%EC%8A%A4%ED%81%AC%EB%A6%B0%EC%83%B7_2021-03-15_%EC%98%A4%ED%9B%84_2.44.29.png?type=w580"  alt=""/>
             <div>
             <center>
-              <h4>로그인 해주세요.</h4>
+              <h4>로그인을 해주세요.<br/></h4>
             </center>
             </div>
           </div>
           <div>
-            <div id="googleSignIn">
+            <div id="naverLogin">
               <span className={styles.social_button}>
-                <img src="https://static.tacdn.com/img2/google/G_color_40x40.png" className={styles.img} alt="" />
-                <span className={styles.text}>Google로 계속하기 </span>
+                <img src="https://i.pinimg.com/originals/fb/71/04/fb71048e03a5ada757f70d61b583d0bf.png" className={styles.img} alt='naver' />
+                <span className={styles.text}>Naver로 계속하기 </span>
               </span>
             </div>
             <div class="facebook-login-buttons-container">
               <span className={styles.social_button}>
-                <img src="https://static.tacdn.com/img2/facebook/icn-FB2.png" className={styles.img} alt="" />
-                <span className={styles.text}>Facebook 계정으로 계속하기 </span>
+                <img src="https://lh3.googleusercontent.com/proxy/2XlH4vKM-bXNd5N6AlBTFbySWiD9d7Irc9L4pylxfTF3VhepTGVTEXXxUrOzX_6VH6fTN5EEYika3wn5mWYvtiBoJsOuKPa63k9MDdNZZ9sXmPC5n28saSCKD4kQCvEJhrnJmWtIJgAfpSZckYnfAsIrBBqY59YuH-D4rd1YxjMwz3PfLyNq2PAMX8uSVz9Ju4VBEnj9WrF31c7cpB4CnkVVygd57FPD_Chrnh002sI3AfjtDZvGenwYaak4E-ZM4YYWLHMwoDnKHTptxN4e2OZP4ni0H27V2beTVIjkCVJQkd7TYhYKpm1Bt8vx2leS0kv1-w7HfmEicbByz6ncinE030VTsK64lW0tji2ap--zPCCBFA" className={styles.img} alt="kakao" />
+                <span className={styles.text}>Kakao로 계속하기 </span>
               </span>
             </div>
             <div>

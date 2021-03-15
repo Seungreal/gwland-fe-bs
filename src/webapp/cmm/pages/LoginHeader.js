@@ -6,6 +6,7 @@ import THEME from "state/theme";
 import { useCustomState } from "state/state";
 
 export default ({ data = [] }) => {
+  
   const [sticky, setSticky] = useState(false);
   const actions = useCustomState()[1];
 

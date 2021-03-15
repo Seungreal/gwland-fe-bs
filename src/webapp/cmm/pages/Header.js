@@ -50,7 +50,9 @@ export default ({ data = [] }) => {
   });
 
   const header = (
+    
     <Layout>
+    
       <div className={styles.header}>
         <Link url="/">
           <Logo dark />
@@ -64,7 +66,7 @@ export default ({ data = [] }) => {
             hoverType="solid-white-tb"
             click={() => actions.toogleModal()}
           >
-            Get Quote
+            로그인하기
           </Button>
         
 

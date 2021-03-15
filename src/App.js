@@ -20,7 +20,7 @@ import { Sidebar, Footer } from "./components/layouts";
 import { ModalVideo, RequestForm } from "./components/ui";
 import { Spinner } from "./components/elements";
 import { useCustomState } from "./state/state";
-import ContactForm from "webapp/cli/pages/ContactForm/ContactForm";
+import ClientPage from "webapp/cli/pages/ClientPage";
 import ModalForm from "webapp/cli/pages/ModalForm/ModalForm";
 
 
@@ -55,7 +55,7 @@ export default () => {
             </Route>
             <Route path="/blog/:post_id" exact component={PlaceDetail} />
             <Route path="/manage" exact component={Manage} />
-            <Route path="/Join" exact component={ContactForm}/>
+            <Route path="/client" exact component={ClientPage}/>
             
             
             
