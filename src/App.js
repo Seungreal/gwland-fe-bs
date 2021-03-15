@@ -20,8 +20,8 @@ import { Sidebar, Footer } from "./components/layouts";
 import { ModalVideo, RequestForm } from "./components/ui";
 import { Spinner } from "./components/elements";
 import { useCustomState } from "./state/state";
-import ContactForm from "webapp/cli/pages/ContactForm";
-import ModalForm from './webapp/cli/ModalForm/ModalForm'
+import ContactForm from "webapp/cli/pages/ContactForm/ContactForm";
+import ModalForm from "webapp/cli/pages/ModalForm/ModalForm";
 
 
 export default () => {
