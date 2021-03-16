@@ -12,6 +12,8 @@ import App from "./App";
 import Mock from "./state/mock";
 import "./state/database";
 
+
+
 Mock.onAny().passThrough();
 
 ReactDOM.render(

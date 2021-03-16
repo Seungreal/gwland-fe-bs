@@ -25,6 +25,10 @@ import ModalForm from "webapp/cli/pages/ModalForm/ModalForm";
 
 
 export default () => {
+  
+  
+  
+
   const [state, actions] = useCustomState();
 
   useEffect(() => {
@@ -56,9 +60,6 @@ export default () => {
             <Route path="/blog/:post_id" exact component={PlaceDetail} />
             <Route path="/manage" exact component={Manage} />
             <Route path="/client" exact component={ClientPage}/>
-            
-            
-            
             <Route path="/blog/:post_id" exact component={PostSingle} />
             <Route
               path="/services/:service_id"
@@ -92,6 +93,6 @@ export default () => {
         </Fragment>
     );
   }
-
+  
   return <Fragment>{app}</Fragment>;
 };

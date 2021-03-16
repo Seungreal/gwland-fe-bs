@@ -119,7 +119,9 @@ export default ({ style }) => {
             <div id="naverLogin">
               <span className={styles.social_button}>
                 <img src="https://i.pinimg.com/originals/fb/71/04/fb71048e03a5ada757f70d61b583d0bf.png" className={styles.img} alt='naver' />
-                <span className={styles.text}>Naver로 계속하기 </span>
+                <span className={styles.text}>
+                  <a href="http://localhost:8080/oauth2/authorization/naver">Naver로 계속하기 </a>
+                </span>
               </span>
             </div>
             <div class="facebook-login-buttons-container">
