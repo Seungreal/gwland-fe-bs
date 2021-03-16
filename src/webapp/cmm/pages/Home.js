@@ -12,7 +12,7 @@ import {
   Facts,
 } from "components/widgets";
 
-import { useCustomState } from "state/state";
+import { useCustomState } from "webapp/cmm/state/state";
 
 export default () => {
   const state = useCustomState()[0];
@@ -20,15 +20,7 @@ export default () => {
   return (
     <Fragment>
           <Slider data={state.data.posts} />
-          <Services3 data={state.data.services} />
-          <Features2 data={state.data.features2} />
-          <Team data={state.data.team} />
-          <Facts data={state.data.facts} />
-          <Services data={state.data.services} />
-          <Features data={state.data.features} />
-          <Subscribe />
-          <Reviews data={state.data.reviews} />
-          <Contacts />
+          
     </Fragment>
   );
 };

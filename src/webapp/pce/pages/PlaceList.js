@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, Fragment } from "react";
 import styles from "../styles/PlaceList.module.scss";
-import { useCustomState } from "state/state";
+import { useCustomState } from "webapp/cmm/state/state";
 import { useParams, useRouteMatch } from "react-router-dom";
 import { animateScroll as scroll } from "react-scroll";
 
@@ -12,7 +12,7 @@ import {
   BlogSearch,
 } from "components/pages/Blog/components";
 
-import { Header } from "components/widgets";
+import  Header  from "webapp/cmm/widgets/Header/Header";
 
 export default ({ sidebar = "left", layout = "grid", title = "title" }) => {
   const state = useCustomState()[0];
@@ -105,7 +105,7 @@ export default ({ sidebar = "left", layout = "grid", title = "title" }) => {
 
   return (
     <Fragment>
-      <Header img={state.data.header_bgs.blog}>{pageTitle}</Header>
+      <Header img="assets/placeholders/photo.jpg">{pageTitle}</Header>
       <section
         className={[
           styles.wrapper,

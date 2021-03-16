@@ -1,12 +1,11 @@
 import React, { useState, useEffect, Fragment } from "react";
-import styles from "../styles/Header.module.scss";
-import Layout from "components/layouts/Layout/Layout";
+import styles from "./Header.module.scss";
+import Layout from "../Layout/Layout";
 import { Button, Link, Logo } from "components/elements";
 import THEME from "state/theme";
-import { useCustomState } from "state/state";
+import { useCustomState } from "webapp/cmm/state/state";
 
 export default ({ data = [] }) => {
-  
   const [sticky, setSticky] = useState(false);
   const actions = useCustomState()[1];
 
@@ -60,17 +59,19 @@ export default ({ data = [] }) => {
         <ul className={styles.menu}>{menu}</ul>
 
         <div className={styles.btn_desktop}>
-          <Button after="&#xf107;" type="outline-white-tw" hoverType="solid-white-tb"
-             to="/join">
-            로그인하기
+          <Button
+            after="&#xf107;"
+            type="outline-white-tw"
+            hoverType="solid-white-tb"
+            click={() => actions.toogleModal()}
+          >
+            Get Quote
           </Button>
         </div>
-        
-
 
         <div
           className={styles.btn_mobile}
-        onClick={() => actions.toogleSidebar()}
+          onClick={() => actions.toogleSidebar()}
         >
           <Button
             after="&#xf0c9;"

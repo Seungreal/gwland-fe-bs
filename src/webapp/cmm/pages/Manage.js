@@ -1,13 +1,14 @@
 import React, { Fragment } from "react";
-import { Header, Contacts2 } from "components/widgets";
-import { useCustomState } from "state/state";
+import { Contacts2 } from "components/widgets";
+import { useCustomState } from "webapp/cmm/state/state";
+import Header from 'webapp/cmm/widgets/Header/Header'
 
 export default () => {
   const state = useCustomState()[0];
 
   return (
     <Fragment>
-      <Header img={state.data.header_bgs.contacts}>Our contacts</Header>
+      <Header img="assets/placeholders/photo.jpg">Our contacts</Header>
       <Contacts2 />
     </Fragment>
   );
