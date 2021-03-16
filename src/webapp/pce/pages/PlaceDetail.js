@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "../styles/PlaceDetail.module.scss";
 import { Header } from "components/widgets";
 import { useParams } from "react-router-dom";
-import { useCustomState } from "state/state";
+import { useCustomState } from "webapp/cmm/state/state";
 import Layout from "components/layouts/Layout/Layout";
 import THEME from "state/theme";
 

@@ -1,16 +1,15 @@
 import React, { Fragment } from "react";
-import { Header, ListBlock, Services2, Pricing } from "components/widgets";
-import { useCustomState } from "state/state";
+import { ListBlock, Services2, Pricing } from "components/widgets";
+import { useCustomState } from "webapp/cmm/state/state";
+import Header from 'webapp/cmm/widgets/Header/Header'
 
 export default () => {
   const state = useCustomState()[0];
 
   return (
     <Fragment>
-      <Header img={state.data.header_bgs.services}>Our services</Header>
-      <ListBlock data={state.data.choose} />
-      <Services2 data={state.data.services} />
-      <Pricing data={state.data.pricing} />
+      <Header img="assets/placeholders/photo.jpg">Our services</Header>
+      <h1>코스관리 페이지</h1>
     </Fragment>
   );
 };
