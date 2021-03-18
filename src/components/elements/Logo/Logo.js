@@ -7,9 +7,6 @@ export default ({ dark }) => (
     className={[styles.logo, dark ? styles.dark : styles.light].join(" ")}
     style={{ borderColor: THEME.color }}
   >
-    <i className="las la-industry" />
-    <span>
-      Build<b>Stars.</b>
-    </span>
+    <img src="https://blog.kakaocdn.net/dn/cbLwCj/btq0jNgWZKH/PKb61CR5YgBl7JBR6olER0/img.png"/>
   </figure>
 );
