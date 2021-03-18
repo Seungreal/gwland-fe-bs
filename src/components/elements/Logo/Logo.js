@@ -7,6 +7,6 @@ export default ({ dark }) => (
     className={[styles.logo, dark ? styles.dark : styles.light].join(" ")}
     style={{ borderColor: THEME.color }}
   >
-    <img src="https://blog.kakaocdn.net/dn/cbLwCj/btq0jNgWZKH/PKb61CR5YgBl7JBR6olER0/img.png"/>
+    <img src="https://blog.kakaocdn.net/dn/ckTINS/btq0kDlizZg/3xft3jiNGglAg0jZEnuKAk/img.png"/>
   </figure>
 );

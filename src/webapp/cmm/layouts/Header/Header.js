@@ -65,7 +65,7 @@ export default ({ data = [] }) => {
             hoverType="solid-white-tb"
             click={() => actions.toogleModal()}
           >
-            Get Quote
+            간편 로그인
           </Button>
         </div>
 

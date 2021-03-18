@@ -5,7 +5,7 @@ export default ()=>{
     return <>
         <div className={styles.wrapper}>
             <div className={styles.login_form}>
-            <br/><br/><br/><br/><br/>
+            <br/><br/><br/>
                 <div >
                     <img src="https://blog.kakaocdn.net/dn/buWema/btq0nOe9uty/trBSZJKOhCRmC4JkFrODDK/img.png" alt="brand logo"  style={{maxWidth:"355px"}}/>
                 </div>
