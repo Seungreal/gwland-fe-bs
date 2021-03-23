@@ -34,8 +34,7 @@ export default () => {
         <PlaceList
           sidebar="left"
           layout="list"
-          title="Blog list left sidebar"
-        />
+          title="Blog list left sidebar"/>
       </Route>
       <Route path="/blog/:post_id" exact component={PlaceDetail} />
       <Route path="/login" exact component={LoginForm}/>

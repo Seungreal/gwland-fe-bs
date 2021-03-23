@@ -31,7 +31,7 @@ export default ()=>{
                     <span className={styles.social_button}>
                         <img src="https://blog.kakaocdn.net/dn/dftmIh/btq0n9QY4iP/QaxgN8Kve1aJdSfmviKnK0/img.png" className={styles.img} alt="kakaoLogo"/>
                         <span className={styles.text}>
-                        <a href="">Kakao로 계속하기 </a>
+                        <a href="http://localhost:8080/oauth2/authorization/kakao">Kakao로 계속하기 </a>
                         </span>
                     </span>
                     <span className={styles.social_button}>

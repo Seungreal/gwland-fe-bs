@@ -8,30 +8,18 @@ let listeners = [];
 let state = {
   data: {
     menu: [
-      {
-        name: "홈",
-        url: "/",
-      },
-      {
-        name: "설문하기",
-        url: "/survey",
-      },
-      {
-        name: "코스관리",
-        url: "/course",
-      },
-      {
-        name: "Portfolio",
-        url: "/portfolio",
-      },
-      {
-        name: "관광지",
-        url: "/place/list",
-      },
-      {
-        name: "관리자",
-        url: "/manage",
-      },
+      {name: "홈",
+        url: "/",},
+      {ame: "설문하기",
+        url: "/survey",},
+      {name: "코스관리",
+        url: "/course",},
+      {name: "Portfolio",
+        url: "/portfolio",},
+      {name: "관광지",
+        url: "/place/list",},
+      {name: "관리자",
+        url: "/manage",},
     ],
     posts: [
       {

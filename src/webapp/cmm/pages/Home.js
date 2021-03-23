@@ -19,8 +19,7 @@ export default () => {
 
   return (
     <Fragment>
-          <Slider data={state.data.posts} />
-          
+      <Slider data={state.data.posts} />
     </Fragment>
   );
 };
