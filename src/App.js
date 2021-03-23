@@ -19,6 +19,7 @@ import Header from './webapp/cmm/layouts/Header/Header'
 import {useCustomState} from './webapp/cmm/state/state'
 import AuthRoute from "webapp/cli/components/AuthRoute";
 import LoginForm from "webapp/cli/pages/LoginForm";
+import PlacePage from "webapp/pce/pages/PlacePage";
 
 export default () => {
   const state = useCustomState()[0]
@@ -30,13 +31,7 @@ export default () => {
       <Route path="/" exact component={Home} />
       <Route path="/survey" exact component={SurveyPage} />
       <AuthRoute authenticated={null} path="/course" componet={Course}/>
-      <Route path="/place/list" exact>
-        <PlaceList
-          sidebar="left"
-          layout="list"
-          title="Blog list left sidebar"/>
-      </Route>
-      <Route path="/blog/:post_id" exact component={PlaceDetail} />
+      <Route path="/place" component={PlacePage}/>
       <Route path="/login" exact component={LoginForm}/>
       <Route path="/manage" exact component={Manage} />
       

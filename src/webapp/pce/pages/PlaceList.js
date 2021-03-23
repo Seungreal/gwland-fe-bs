@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useCallback, Fragment } from "react";
 import styles from "../styles/PlaceList.module.scss";
 import { useCustomState } from "webapp/cmm/state/state";
-import { useParams, useRouteMatch } from "react-router-dom";
+import { Link, useParams, useRouteMatch } from "react-router-dom";
 import { animateScroll as scroll } from "react-scroll";
 
 import {
-  BlogCard,
   BlogPagination,
   BlogCategories,
   BlogFeatured,
@@ -13,6 +12,7 @@ import {
 } from "components/pages/Blog/components";
 
 import  Header  from "webapp/cmm/widgets/Header/Header";
+import BlogCard from "../BlogCard/BlogCard";
 
 export default ({ sidebar = "left", layout = "grid", title = "title" }) => {
   const state = useCustomState()[0];
@@ -76,16 +76,7 @@ export default ({ sidebar = "left", layout = "grid", title = "title" }) => {
             key={index}
             layout={layout}
             post={post}
-            author={
-              state.data.users.filter(
-                (user) => user.id.toString() === post.user_id
-              )[0]
-            }
-            category={
-              state.data.categories.filter(
-                (cat) => cat.id === post.category_id.toString()
-              )[0].title
-            }
+            
           />
         );
       })
@@ -120,6 +111,7 @@ export default ({ sidebar = "left", layout = "grid", title = "title" }) => {
           <BlogSearch />
           <BlogCategories data={state.data.categories} />
           <BlogFeatured data={state.data.posts} />
+          <Link to="/place/add">장소추가</Link>
         </aside>
 
         <article>

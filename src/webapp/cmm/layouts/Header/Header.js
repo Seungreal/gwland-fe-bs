@@ -86,14 +86,6 @@ export default ({ data = [] }) => {
   return (
     <Fragment>
       <div className={styles.wrapper}>{header}</div>
-      <div
-        className={[
-          styles.wrapper,
-          sticky ? styles.sticky : styles.hidden,
-        ].join(" ")}
-      >
-        {header}
-      </div>
     </Fragment>
   );
 };
