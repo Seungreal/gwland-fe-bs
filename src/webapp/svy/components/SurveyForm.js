@@ -10,8 +10,7 @@ export default ()=>{
     const [season,setSeason] = useState('봄')
     const [partner,setPartner] = useState('나혼자')
     const [duration,setDuration] = useState('2')
-    const [cat1,setCat1] = useState([])
-    const [cat2,setCat2] = useState([])
+    const [theme,setTheme] = useState([])
     const [location,setLocation] = useState('강원도')
 
     const handlePrev = ()=>{setStep(prevStep=>prevStep-1)}
@@ -21,22 +20,12 @@ export default ()=>{
     const handleSeason = (e)=>{setSeason(e.target.value)}
     const handlePartner = (e)=>{setPartner(e.target.value)}
     const handleDuration = (e)=>{setDuration(e.target.value)}
-    const handleCat1 = (e)=>{
-        const val=e.target.value
-        if(cat1.includes(val)){
-            setCat1(cat1.filter(e=>e!==val))
-        }else if(cat1.length<3){
-            setCat1(cat1.concat(val))
-        }else{
-            e.target.checked=false
-        }
-    }
-    const handleCat2 = (e)=>{
+    const handleTheme = (e)=>{
         const val = e.target.value
-        if(cat2.includes(val)){
-            setCat2(cat2.filter(e=>e!==val))
-        }else if(cat2.length<3){
-            setCat2(cat2.concat(val))
+        if(theme.includes(val)){
+            setTheme(theme.filter(e=>e!==val))
+        }else if(theme.length<3){
+            setTheme(theme.concat(val))
         }else{
             e.target.checked=false
         }
@@ -45,14 +34,16 @@ export default ()=>{
     const submitSvy = (e)=>{
         e.preventDefault()
         Axios.post('http://localhost:8080/survey/save',{
-            gender,age,season,partner,duration,cat1,cat2,location
+            gender,age,season,partner,duration,location,
+			theme1:theme[0],
+			theme2:theme[1],
+			theme3:theme[2]
         }).then((res)=>{alert(res)})
         .catch((err)=>{alert(err)})
     }
 
     return <>
     <div className={styles.wrap}>
-		
 		<div>
 			<section class="search_wrap">
 				<div className={styles.contentInner}>
@@ -152,19 +143,19 @@ export default ()=>{
 									<dd class="select-answer">
 										<ul class="select_list">
 											<li class="check_course">
-												<input type="radio" value="봄" id="course1_1" checked={season=='봄'} onChange={handleSeason}/>
+												<input type="radio" value="봄" id="course1_1" checked={season==='봄'} onChange={handleSeason}/>
 												<label for="course1_1">봄</label>
 											</li>
 											<li class="check_course">
-												<input type="radio" value="여름" id="course1_2" checked={season=='여름'} onChange={handleSeason}/>
+												<input type="radio" value="여름" id="course1_2" checked={season==='여름'} onChange={handleSeason}/>
 												<label for="course1_2">여름</label>
 											</li>
 											<li class="check_course">
-												<input type="radio" value="가을" id="course1_3" checked={season=='가을'} onChange={handleSeason}/>
+												<input type="radio" value="가을" id="course1_3" checked={season==='가을'} onChange={handleSeason}/>
 												<label for="course1_3">가을</label>
 											</li>
 											<li class="check_course">
-												<input type="radio" value="겨울" id="course1_4" checked={season=='겨울'} onChange={handleSeason}/>
+												<input type="radio" value="겨울" id="course1_4" checked={season==='겨울'} onChange={handleSeason}/>
 												<label for="course1_4">겨울</label>
 											</li>
 										</ul>
@@ -219,129 +210,73 @@ export default ()=>{
 
 							<div className={step===3?styles.selected_step:styles.step}>
 								<dl class="select_box">
-									<dt class="select-question"><em class="Q-text">Q</em> 어디를 여행하고 싶으신가요? <span class="maximum-text">(최대 3개)</span></dt>
+									<dt class="select-question"><em class="Q-text">Q</em> 관심있는 체험이나 테마가 있나요? <span class="maximum-text">(최대 3개)</span></dt>
 									<dd class="select-answer">
 										<ul class="select_list">
 											<li class="check_course check_icon">
-												<input type="checkbox" value="바다" id="course4_1" onChange={handleCat1}/>
-												<label for="course4_1">
-													<i class="check-icon course_sea"></i>
-													<p>바다</p>
+												<input type="checkbox" value="자연" id="course5_1" onChange={handleTheme}/>
+												<label for="course5_1">
+													<i class="check-icon course_trekking"></i>
+													<p>자연/풍경</p>
 												</label>
 											</li>
 											<li class="check_course check_icon">
-												<input type="checkbox" value="산" id="course4_2" onChange={handleCat1}/>
-												<label for="course4_2">
-													<i class="check-icon course_MT"></i>
-													<p>산</p>
+												<input type="checkbox" value="맛집" id="course5_2" onChange={handleTheme}/>
+												<label for="course5_2">
+													<i class="check-icon course_camping"></i>
+													<p>맛집탐방</p>
 												</label>
 											</li>
 											<li class="check_course check_icon">
-												<input type="checkbox" value="강" id="course4_3" onChange={handleCat1}/>
-												<label for="course4_3">
-													<i class="check-icon course_river"></i>
-													<p>강</p>
+												<input type="checkbox" value="역사" id="course5_3" onChange={handleTheme}/>
+												<label for="course5_3">
+													<i class="check-icon course_leports"></i>
+													<p>역사관광</p>
 												</label>
 											</li>
 											<li class="check_course check_icon">
-												<input type="checkbox" value="섬" id="course4_4" onChange={handleCat1}/>
-												<label for="course4_4">
-													<i class="check-icon course_island"></i>
-													<p>섬</p>
+												<input type="checkbox" value="휴양" id="course5_4" onChange={handleTheme}/>
+												<label for="course5_4">
+													<i class="check-icon course_activity"></i>
+													<p>휴식/휴양</p>
 												</label>
 											</li>
 											<li class="check_course check_icon">
-												<input type="checkbox" value="공원" id="course4_5" onChange={handleCat1}/>
-												<label for="course4_5">
-													<i class="check-icon course_park"></i>
-													<p>공원</p>
+												<input type="checkbox" value="레포츠" id="course5_5" onChange={handleTheme}/>
+												<label for="course5_5">
+													<i class="check-icon course_drive"></i>
+													<p>레포츠</p>
 												</label>
 											</li>
 											<li class="check_course check_icon">
-												<input type="checkbox" value="동굴" id="course4_6" onChange={handleCat1}/>
-												<label for="course4_6">
-													<i class="check-icon course_cave"></i>
-													<p>동굴</p>
+												<input type="checkbox" value="축제" id="course5_6" onChange={handleTheme}/>
+												<label for="course5_6">
+													<i class="check-icon course_tasty"></i>
+													<p>축제</p>
 												</label>
 											</li>
 											<li class="check_course check_icon">
-												<input type="checkbox" value="전망대" id="course4_7" onChange={handleCat1}/>
-												<label for="course4_7">
-													<i class="check-icon course_observatory"></i>
-													<p>전망대</p>
+												<input type="checkbox" value="체험" id="course5_7" onChange={handleTheme}/>
+												<label for="course5_7">
+													<i class="check-icon course_view"></i>
+													<p>체험</p>
 												</label>
 											</li>
 											<li class="check_course check_icon">
-												<input type="checkbox" value="길" id="course4_8" onChange={handleCat1}/>
-												<label for="course4_8">
-													<i class="check-icon course_road"></i>
-													<p>길</p>
+												<input type="checkbox" value="쇼핑" id="course5_8" onChange={handleTheme}/>
+												<label for="course5_8">
+													<i class="check-icon course_display"></i>
+													<p>쇼핑</p>
 												</label>
 											</li>
 											<li class="check_course check_icon">
-												<input type="checkbox" value="역사유적" id="course4_9" onChange={handleCat1}/>
-												<label for="course4_9">
-													<i class="check-icon course_history"></i>
-													<p>역사유적</p>
+												<input type="checkbox" value="문화" id="course5_9" onChange={handleTheme}/>
+												<label for="course5_9">
+													<i class="check-icon course_market"></i>
+													<p>문화/공연</p>
 												</label>
 											</li>
-											<li class="check_course check_icon">
-												<input type="checkbox" value="종교유적" id="course4_10" onChange={handleCat1}/>
-												<label for="course4_10">
-													<i class="check-icon course_religion"></i>
-													<p>종교유적</p>
-												</label>
-											</li>
-											<li class="check_course check_icon">
-												<input type="checkbox" value="촬영지" id="course4_11" onChange={handleCat1}/>
-												<label for="course4_11">
-													<i class="check-icon course_video"></i>
-													<p>촬영지</p>
-												</label>
-											</li>
-											<li class="check_course check_icon">
-												<input type="checkbox" value="테마거리" id="course4_12" onChange={handleCat1}/>
-												<label for="course4_12">
-													<i class="check-icon course_tRoad"></i>
-													<p>테마거리</p>
-												</label>
-											</li>
-											<li class="check_course check_icon">
-												<input type="checkbox" value="테마파크" id="course4_13" onChange={handleCat1}/>
-												<label for="course4_13">
-													<i class="check-icon course_themapark"></i>
-													<p>테마파크</p>
-												</label>
-											</li>
-											<li class="check_course check_icon">
-												<input type="checkbox" value="문화마을" id="course4_14" onChange={handleCat1}/>
-												<label for="course4_14">
-													<i class="check-icon course_town"></i>
-													<p>문화마을</p>
-												</label>
-											</li>
-											<li class="check_course check_icon">
-												<input type="checkbox" value="문화시설" id="course4_15" onChange={handleCat1}/>
-												<label for="course4_15">
-													<i class="check-icon course_culture"></i>
-													<p>문화시설</p>
-												</label>
-											</li>
-											<li class="check_course check_icon">
-												<input type="checkbox" value="랜드마크" id="course4_16" onChange={handleCat1}/>
-												<label for="course4_16">
-													<i class="check-icon course_landmark"></i>
-													<p>랜드마크</p>
-												</label>
-											</li>
-											<li class="check_course check_icon">
-												<input type="checkbox" value="전통시장" id="course4_17" onChange={handleCat1}/>
-												<label for="course4_17">
-													<i class="check-icon course_tradition"></i>
-													<p>전통시장</p>
-												</label>
-											</li>
-
+											
 										</ul>
 									</dd>
 								</dl>
@@ -353,126 +288,6 @@ export default ()=>{
 							</div>
 
 							<div className={step===4?styles.selected_step:styles.step}>
-								<dl class="select_box">
-									<dt class="select-question"><em class="Q-text">Q</em> 관심있는 체험이나 테마가 있나요? <span class="maximum-text">(최대 3개)</span></dt>
-									<dd class="select-answer">
-										<ul class="select_list">
-											<li class="check_course check_icon">
-												<input type="checkbox" value="트레킹" id="course5_1" onChange={handleCat2}/>
-												<label for="course5_1">
-													<i class="check-icon course_trekking"></i>
-													<p>트레킹</p>
-												</label>
-											</li>
-											<li class="check_course check_icon">
-												<input type="checkbox" value="캠핑" id="course5_2" onChange={handleCat2}/>
-												<label for="course5_2">
-													<i class="check-icon course_camping"></i>
-													<p>캠핑</p>
-												</label>
-											</li>
-											<li class="check_course check_icon">
-												<input type="checkbox" value="레포츠" id="course5_3" onChange={handleCat2}/>
-												<label for="course5_3">
-													<i class="check-icon course_leports"></i>
-													<p>레포츠</p>
-												</label>
-											</li>
-											<li class="check_course check_icon">
-												<input type="checkbox" value="액티비티" id="course5_4" onChange={handleCat2}/>
-												<label for="course5_4">
-													<i class="check-icon course_activity"></i>
-													<p>액티비티</p>
-												</label>
-											</li>
-											<li class="check_course check_icon">
-												<input type="checkbox" value="드라이브" id="course5_5" onChange={handleCat2}/>
-												<label for="course5_5">
-													<i class="check-icon course_drive"></i>
-													<p>드라이브</p>
-												</label>
-											</li>
-											<li class="check_course check_icon">
-												<input type="checkbox" value="맛집탐방" id="course5_6" onChange={handleCat2}/>
-												<label for="course5_6">
-													<i class="check-icon course_tasty"></i>
-													<p>맛집탐방</p>
-												</label>
-											</li>
-											<li class="check_course check_icon">
-												<input type="checkbox" value="풍경감상" id="course5_7" onChange={handleCat2}/>
-												<label for="course5_7">
-													<i class="check-icon course_view"></i>
-													<p>풍경감상</p>
-												</label>
-											</li>
-											<li class="check_course check_icon">
-												<input type="checkbox" value="전시관람" id="course5_8" onChange={handleCat2}/>
-												<label for="course5_8">
-													<i class="check-icon course_display"></i>
-													<p>전시관람</p>
-												</label>
-											</li>
-											<li class="check_course check_icon">
-												<input type="checkbox" value="시장구경" id="course5_9" onChange={handleCat2}/>
-												<label for="course5_9">
-													<i class="check-icon course_market"></i>
-													<p>시장구경</p>
-												</label>
-											</li>
-											<li class="check_course check_icon">
-												<input type="checkbox" value="체험" id="course5_10" onChange={handleCat2}/>
-												<label for="course5_10">
-													<i class="check-icon course_experience"></i>
-													<p>체험</p>
-												</label>
-											</li>
-											<li class="check_course check_icon">
-												<input type="checkbox" value="축제" id="course5_11" onChange={handleCat2}/>
-												<label for="course5_11">
-													<i class="check-icon course_festival"></i>
-													<p>축제</p>
-												</label>
-											</li>
-											<li class="check_course check_icon">
-												<input type="checkbox" value="휴양" id="course5_12" onChange={handleCat2}/>
-												<label for="course5_12">
-													<i class="check-icon course_rest"></i>
-													<p>휴양</p>
-												</label>
-											</li>
-											<li class="check_course check_icon">
-												<input type="checkbox" value="물놀이" id="course5_13" onChange={handleCat2}/>
-												<label for="course5_13">
-													<i class="check-icon course_pool"></i>
-													<p>물놀이</p>
-												</label>
-											</li>
-											<li class="check_course check_icon">
-												<input type="checkbox" value="문화탐방" id="course5_14" onChange={handleCat2}/>
-												<label for="course5_14">
-													<i class="check-icon course_visit"></i>
-													<p>문화탐방</p>
-												</label>
-											</li>
-											<li class="check_course check_icon">
-												<input type="checkbox" value="쇼핑" id="course5_15" onChange={handleCat2}/>
-												<label for="course5_15">
-													<i class="check-icon course_shopping"></i>
-													<p>쇼핑</p>
-												</label>
-											</li>
-										</ul>
-									</dd>
-								</dl>
-
-								<div className={styles.button_box}>
-                                    <Button variant='contained' onClick={handlePrev}>이전</Button>
-									<Button variant='contained' color='primary' onClick={handleNext}>다음</Button>
-								</div>
-							</div>
-
-							<div className={step===5?styles.selected_step:styles.step}>
 								<dl class="select_box">
 									<dt class="select-question"><em class="Q-text">Q</em> 특별히 가고 싶은 지역이 있나요?</dt>
 									<dd class="select-answer">
@@ -567,7 +382,6 @@ export default ()=>{
 				</div>
 			</section>
 		</div>
-
 	
 	</div>
     </>
