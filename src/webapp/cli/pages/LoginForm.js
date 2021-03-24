@@ -27,10 +27,9 @@ export default ()=>{
                 <div className={styles.login_box}>
                     
                     <ul class="loginMenu">
-                        <li className={styles.join}>
-                            <h2>
-                                간편 로그인
-                            </h2>
+                        <li className={styles.join, styles.LoginFont}>
+                            네이버, 카카오, 구글계정 연동으로 <br/> <br/>
+                            회원가입 없이 간편하게 로그인 하세요!
                             <br/>
                         </li>
                         

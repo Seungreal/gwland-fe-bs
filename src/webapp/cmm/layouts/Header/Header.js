@@ -65,7 +65,7 @@ export default ({ data = [] }) => {
           <Link url="/login">
             <Button style={{
               borderRadius: 20,
-              backgroundColor: "#FFF59D",
+              backgroundColor: "#FFD600",
               padding: "8px 16px",
               fontSize: "14px"
             }} variant="contained" size="large" startIcon={<Icon />}>간편 로그인</Button>
