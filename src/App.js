@@ -35,8 +35,6 @@ export default () => {
       <Route path="/login" exact component={LoginForm}/>
       <Route path="/manage" exact component={Manage} />
       
-      
-      
       <Route path="/blog/:post_id" exact component={PostSingle} />
       <Route
         path="/services/:service_id"
@@ -49,7 +47,6 @@ export default () => {
         exact
         component={PortfolioSingle}
       />
-
       <Route path="/blog/cats/:category" exact>
         <Blog sidebar="left" layout="grid" />
       </Route>

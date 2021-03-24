@@ -1,9 +1,12 @@
 import React, { useState, useEffect, Fragment } from "react";
+import { Button } from '@material-ui/core'
 import styles from "./Header.module.scss";
 import Layout from "../Layout/Layout";
-import { Button, Link, Logo } from "components/elements";
+import { Link, Logo } from "components/elements";
 import THEME from "state/theme";
 import { useCustomState } from "webapp/cmm/state/state";
+import Icon from "@material-ui/icons/DirectionsBus"
+import ButtonColor from '@material-ui/core/colors/yellow';
 
 export default ({ data = [] }) => {
   const [sticky, setSticky] = useState(false);
@@ -59,14 +62,14 @@ export default ({ data = [] }) => {
         <ul className={styles.menu}>{menu}</ul>
 
         <div className={styles.btn_desktop}>
-          <Button
-            after="&#xf107;"
-            type="outline-white-tw"
-            hoverType="solid-white-tb"
-            click={() => actions.toogleModal()}
-          >
-            간편 로그인
-          </Button>
+          <Link url="/login">
+            <Button style={{
+              borderRadius: 20,
+              backgroundColor: "#FFF59D",
+              padding: "8px 16px",
+              fontSize: "14px"
+            }} variant="contained" size="large" startIcon={<Icon />}>간편 로그인</Button>
+          </Link>
         </div>
 
         <div
