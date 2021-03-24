@@ -1,9 +1,10 @@
 import React, { useState, useEffect, Fragment } from "react";
 import styles from "./Header.module.scss";
 import Layout from "../Layout/Layout";
-import { Button, Link, Logo } from "components/elements";
+import { Button, Link } from "components/elements";
 import THEME from "state/theme";
 import { useCustomState } from "webapp/cmm/state/state";
+import Logo from 'webapp/cmm/elements/Logo/Logo'
 
 export default ({ data = [] }) => {
   const [sticky, setSticky] = useState(false);
@@ -60,12 +61,11 @@ export default ({ data = [] }) => {
 
         <div className={styles.btn_desktop}>
           <Button
-            after="&#xf107;"
             type="outline-white-tw"
             hoverType="solid-white-tb"
-            click={() => actions.toogleModal()}
+            to="/login"
           >
-            Get Quote
+            간편 로그인
           </Button>
         </div>
 
@@ -86,14 +86,6 @@ export default ({ data = [] }) => {
   return (
     <Fragment>
       <div className={styles.wrapper}>{header}</div>
-      <div
-        className={[
-          styles.wrapper,
-          sticky ? styles.sticky : styles.hidden,
-        ].join(" ")}
-      >
-        {header}
-      </div>
     </Fragment>
   );
 };

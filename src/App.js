@@ -11,7 +11,7 @@ import {
 import Home from './webapp/cmm/pages/Home'
 import SurveyPage from './webapp/svy/pages/SurveyPage'
 import Course from './webapp/crs/pages/Course'
-import Manage from './webapp/cmm/pages/Manage'
+import ManagePage from 'webapp/mng/pages/ManagePage'
 import Sidebar from './webapp/cmm/layouts/Sidebar/Sidebar'
 import Header from './webapp/cmm/layouts/Header/Header'
 import {useCustomState} from './webapp/cmm/state/state'
@@ -31,7 +31,7 @@ export default () => {
       <AuthRoute authenticated={null} path="/course" componet={Course}/>
       <Route path="/place" component={PlacePage}/>
       <Route path="/login" exact component={LoginForm}/>
-      <Route path="/manage" exact component={Manage} />
+      <Route path="/manage" component={ManagePage} />
       
       
       
