@@ -1,6 +1,6 @@
 import React from 'react'
 import axios from 'axios'
-import styles from './Loginform.module.scss'
+import styles from '../styles/Loginform.module.scss'
 
 export default ()=>{
     const oauthNaver = e => {

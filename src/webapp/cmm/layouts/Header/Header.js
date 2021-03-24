@@ -6,7 +6,6 @@ import { Link, Logo } from "components/elements";
 import THEME from "state/theme";
 import { useCustomState } from "webapp/cmm/state/state";
 import Icon from "@material-ui/icons/DirectionsBus"
-import ButtonColor from '@material-ui/core/colors/yellow';
 
 export default ({ data = [] }) => {
   const [sticky, setSticky] = useState(false);
@@ -65,7 +64,7 @@ export default ({ data = [] }) => {
           <Link url="/login">
             <Button style={{
               borderRadius: 20,
-              backgroundColor: "#FFD600",
+              backgroundColor: "#FFEA00",
               padding: "8px 16px",
               fontSize: "14px"
             }} variant="contained" size="large" startIcon={<Icon />}>간편 로그인</Button>

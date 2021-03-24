@@ -7,7 +7,6 @@ export default () => {
 
   return (
     <Fragment>
-      <Header img="assets/placeholders/photo.jpg">About company</Header>
 		  <SurveyForm/>
     </Fragment>
   );

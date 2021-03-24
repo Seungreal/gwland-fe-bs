@@ -4,6 +4,7 @@ import "react-app-polyfill/stable";
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter as Router } from "react-router-dom";
+import {createStore} from 'redux'
 import "./index.scss";
 import "line-awesome/dist/line-awesome/css/line-awesome.min.css";
 import ScrollToTop from "./utilities/scrollToTop";
@@ -15,9 +16,11 @@ import "./state/database";
 Mock.onAny().passThrough();
 
 ReactDOM.render(
-  <Router>
-    <ScrollToTop />
-    <App />
-  </Router>,
+  
+    <Router>
+      <ScrollToTop />
+      <App />
+    </Router>,
+  
   document.getElementById("root")
 );

@@ -79,12 +79,6 @@ export default ()=>{
 										<i class="step_icon_default"></i>
 									</div>
 								</li>
-								<li class="">
-									<div class="step_box">
-										<span class="step_text">5STEP</span>
-										<i class="step_icon_default"></i>
-									</div>
-								</li>
 							</ul>
 							
 							<div className={step===1?styles.selected_step:styles.step}>

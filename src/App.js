@@ -11,14 +11,12 @@ import {
 import Home from './webapp/cmm/pages/Home'
 import SurveyPage from './webapp/svy/pages/SurveyPage'
 import Course from './webapp/crs/pages/Course'
-import PlaceList from './webapp/pce/pages/PlaceList'
-import PlaceDetail from './webapp/pce/pages/PlaceDetail'
-import Manage from './webapp/cmm/pages/Manage'
+import ManagePage from 'webapp/mng/pages/ManagePage'
 import Sidebar from './webapp/cmm/layouts/Sidebar/Sidebar'
 import Header from './webapp/cmm/layouts/Header/Header'
 import {useCustomState} from './webapp/cmm/state/state'
-import AuthRoute from "webapp/cli/components/AuthRoute";
-import LoginForm from "webapp/cli/pages/LoginForm";
+import AuthRoute from "webapp/usr/components/AuthRoute";
+import LoginForm from "webapp/usr/pages/LoginForm";
 import PlacePage from "webapp/pce/pages/PlacePage";
 
 export default () => {
@@ -33,7 +31,7 @@ export default () => {
       <AuthRoute authenticated={null} path="/course" componet={Course}/>
       <Route path="/place" component={PlacePage}/>
       <Route path="/login" exact component={LoginForm}/>
-      <Route path="/manage" exact component={Manage} />
+      <Route path="/manage" component={ManagePage} />
       
       <Route path="/blog/:post_id" exact component={PostSingle} />
       <Route
@@ -47,6 +45,7 @@ export default () => {
         exact
         component={PortfolioSingle}
       />
+
       <Route path="/blog/cats/:category" exact>
         <Blog sidebar="left" layout="grid" />
       </Route>
