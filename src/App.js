@@ -18,6 +18,8 @@ import {useCustomState} from './webapp/cmm/state/state'
 import AuthRoute from "webapp/usr/components/AuthRoute";
 import LoginForm from "webapp/usr/pages/LoginForm";
 import PlacePage from "webapp/pce/pages/PlacePage";
+import ReviewInput from "webapp/rev/pages/ReviewInput"
+import ReviewList from "webapp/rev/pages/ReviewList";
 
 export default () => {
   const state = useCustomState()[0]
@@ -32,7 +34,12 @@ export default () => {
       <Route path="/place" component={PlacePage}/>
       <Route path="/login" exact component={LoginForm}/>
       <Route path="/manage" component={ManagePage} />
+
+
+      <Route path="/test" component={ReviewInput}/>
       
+
+
       <Route path="/blog/:post_id" exact component={PostSingle} />
       <Route
         path="/services/:service_id"

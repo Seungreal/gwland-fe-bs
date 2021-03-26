@@ -67,7 +67,7 @@ export default ({ data = [] }) => {
               backgroundColor: "#FFEA00",
               padding: "8px 16px",
               fontSize: "14px"
-            }} variant="contained" size="large" startIcon={<Icon />}>간편 로그인</Button>
+            }} variant="contained" size="large" startIcon={<Icon />}>간편 가입</Button>
           </Link>
         </div>
 

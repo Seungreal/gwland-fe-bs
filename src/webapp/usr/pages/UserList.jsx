@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios'
-import styles from '../../usr/styles/UserList.module.scss'
+import styles from '../styles/UserList.module.scss'
 import DeleteIcon from '@material-ui/icons/Delete'
-import { SvgIcon, Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core'
+import { Table, TableBody, TableCell, TableHead, TableRow } from '@material-ui/core'
 
 export default () => {
-  const usr = ['번호', '권한', '플랫폼', '소셜 ID', '고객성함', '이메일주소', '연령대', '성별', '가입날짜']
+  const usr = ['번호', '권한', '가입 플랫폼', '소셜 ID', '고객성함', '이메일주소', '연령대', '성별', '가입날짜', '회원탈퇴']
   const [userList, setUserList] = useState([])
   const listURL = '/user/all'
   const deleteURL = '/user/delete'
@@ -20,21 +20,19 @@ export default () => {
   }, [])
 
   const deleteUser = ((user) => {
-  const deleteConfirm = window.confirm('정말 삭제하시겠습니까?')
+    const deleteConfirm = window.confirm('정말 유저정보를 삭제하시겠습니까?')
     if (deleteConfirm == true) {
       axios.delete(deleteURL, {
-        data: { num: user.num }
-      })
+        data: { num: user.num } })
         .then((response) => {
           console.log(response.data)
-          alert(`${user.username} 고객님을 삭제하셨습니다.`)
-          window.location.reload('/user/delete')
+          alert(`${user.username}고객님 정보를 삭제하셨습니다.`)
+          window.location.reload(deleteURL)
         })
         .catch(err => { alert(err) })
-    } else if (deleteConfirm != true) {
-      alert('취소하셨습니다.')
-      window.location.reload('/user/delete')
-    }
+    } else {
+      alert('유저정보 삭제를 취소하셨습니다.')
+      window.location.reload(deleteURL)}
   })
 
   return <>
@@ -43,8 +41,8 @@ export default () => {
         <div className={styles.card}>
           <div className={styles.cardHeader}>
             <center>
-              <h2>고객 정보</h2>
-              <h3>※ 구글은 성별과 연령대를 수집할수 없습니다. (구글 정책사항)</h3>
+              <h2>고객 정보 데이터</h2>
+              <h3>※ 구글은 성별과 연령대를 저장할 수 없습니다. (구글 정책사항)</h3>
             </center>
 
           </div>
@@ -70,7 +68,7 @@ export default () => {
                       <TableCell>{user.age}</TableCell>
                       <TableCell>{user.gender}</TableCell>
                       <TableCell>{user.createDate}</TableCell>
-                      <TableCell onClick={() => deleteUser(user)}> <DeleteIcon /></TableCell>
+                      <TableCell onClick={() => deleteUser(user)}> <DeleteIcon/></TableCell>
                     </TableRow>
                   )
                 })}

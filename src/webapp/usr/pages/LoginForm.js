@@ -25,14 +25,11 @@ export default ()=>{
                     <img src="https://blog.kakaocdn.net/dn/buWema/btq0nOe9uty/trBSZJKOhCRmC4JkFrODDK/img.png" alt="brand logo"  style={{maxWidth:"355px"}}/>
                 </div>
                 <div className={styles.login_box}>
-                    
                     <ul class="loginMenu">
                         <li className={styles.join, styles.LoginFont}>
-                            네이버, 카카오, 구글계정 연동으로 <br/> <br/>
-                            회원가입 없이 간편하게 로그인 하세요!
-                            <br/>
+                        번거로운 회원가입 대신 <br/> <br/>
+                        네이버, 카카오, 구글계정 연동으로 <br/> <br/> 간편하게 가입 하세요! <br/> <br/>
                         </li>
-                        
                     </ul>
                 </div>
                 <div className={styles.login_social}>
