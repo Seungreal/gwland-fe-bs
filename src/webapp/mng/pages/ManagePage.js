@@ -8,7 +8,7 @@ export default ()=>{
     <div style={{position:"relative"},{}}>
         <Sidebar/>
         <Switch>
-            <Route path="/manage/survey" component={SurveyList}/>
+            <Route path="/manage/survey" exact component={SurveyList}/>
         </Switch>
     </div>
     </>
