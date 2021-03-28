@@ -13,7 +13,6 @@ export default () => {
   useEffect(() => {
     axios.get(listURL,)
       .then((response) => {
-        console.log(response.data)
         setUserList(response.data)
       })
       .catch(err => { alert(err) })
