@@ -21,8 +21,8 @@ let state = {
         url: "/course",
       },
       {
-        name: "Portfolio",
-        url: "/portfolio",
+        name: "테스트",
+        url: "/test",
       },
       {
         name: "관광지",

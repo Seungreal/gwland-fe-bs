@@ -4,6 +4,14 @@
   margin: 0;
   position: relative;
 }
+
+.LoginFont {
+  font-family:'Jeju Gothic', sans-serif;
+  font-size: larger;
+  font-weight: 550;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 .login_form{
   height: 100%;
   max-width: 385px;
@@ -147,4 +155,5 @@
     font-weight: 600;
     letter-spacing: normal;
   }
+  
 }

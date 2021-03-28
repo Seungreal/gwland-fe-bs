@@ -7,7 +7,7 @@
     -webkit-font-smoothing: antialiased;
     color: rgba(0, 0, 0, 0.87);
     transition: box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
-    background-color: rgb(231, 205, 205);
+    background-color: rgb(241, 234, 234);
     flex: 1 0 auto;
     display: inline-flex;
     outline: 0;
@@ -38,7 +38,7 @@
         transition: fill 200ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
         flex-shrink: 0;
         user-select: none;
-        color: rgb(129, 92, 87);
+        color: rgb(117, 82, 77);
         float: left;
         width: 24px;
         height: 30px;
@@ -63,6 +63,6 @@
         font-family: "Roboto", "Helvetica", "Arial", sans-serif;
         font-weight: 300;
         line-height: 30px;
-        color: rgb(129, 92, 87);
+        color: rgb(31, 26, 25);
     }
 }
