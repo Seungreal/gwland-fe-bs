@@ -7,20 +7,32 @@ const icon = require("../assets/placeholders/icon.svg");
 const database = {
   categories: [
     {
-      id: "0",
-      title: "Product",
+      id: "12",
+      title: "관광지",
     },
     {
-      id: "1",
-      title: "Project",
+      id: "14",
+      title: "문화시설",
     },
     {
-      id: "2",
-      title: "Review",
+      id: "15",
+      title: "축제/공연/행사",
     },
     {
-      id: "3",
-      title: "Article",
+      id: "25",
+      title: "여행코스",
+    },
+    {
+      id: "28",
+      title: "레포츠",
+    },
+    {
+      id: "32",
+      title: "쇼핑",
+    },
+    {
+      id: "39",
+      title: "음식",
     },
   ],
   choose: {
