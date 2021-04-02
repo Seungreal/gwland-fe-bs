@@ -20,6 +20,8 @@ import LoginForm from "webapp/usr/pages/LoginForm";
 import PlacePage from "webapp/pce/pages/PlacePage";
 import ReviewInput from "webapp/rev/pages/ReviewInput"
 import ReviewList from "webapp/rev/pages/ReviewList";
+import Profile from "webapp/usr/pages/Profile";
+import OAuth2RedirectHandler from "webapp/usr/components/OAuth2RedirectHandler";
 
 export default () => {
   const state = useCustomState()[0]
@@ -37,6 +39,8 @@ export default () => {
 
 
       <Route path="/test" component={ReviewInput}/>
+      <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}/>
+      <Route path="/profile" component={Profile}/>
       
 
 

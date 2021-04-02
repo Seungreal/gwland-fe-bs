@@ -5,16 +5,16 @@ import styles from '../styles/Loginform.module.scss'
 export default ()=>{
     const oauthNaver = e => {
         e.preventDefault()
-        window.location.href = "http://localhost:8080/oauth2/authorization/naver"
+        window.location.href = "http://localhost:8080/oauth2/authorization/naver?redirect_uri=http://localhost:3000/oauth2/redirect"
         }
     const oauthKakao = e => {
         e.preventDefault()
-        window.location.href = "http://localhost:8080/oauth2/authorization/kakao"
+        window.location.href = "http://localhost:8080/oauth2/authorization/kakao?redirect_uri=http://localhost:3000/oauth2/redirect"
         }
     
     const oauthGoogle = e => {
         e.preventDefault()
-        window.location.href = "http://localhost:8080/oauth2/authorization/google"
+        window.location.href = "http://localhost:8080/oauth2/authorization/google?redirect_uri=http://localhost:3000/oauth2/redirect"
         }
     
     return <>
