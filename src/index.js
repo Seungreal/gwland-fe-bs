@@ -11,15 +11,21 @@ import App from "./App";
 
 import Mock from "./state/mock";
 import "./state/database";
+import { createStore } from "redux";
+import { rootReudcer } from "webapp/_reducers";
+import { Provider } from "react-redux";
+import { composeWithDevTools } from "redux-devtools-extension";
 
 Mock.onAny().passThrough();
 
+const store = createStore(rootReudcer,composeWithDevTools())
+
 ReactDOM.render(
-  
+  <Provider store={store}>
     <Router>
       <ScrollToTop />
       <App />
-    </Router>,
-  
+    </Router>
+  </Provider>,
   document.getElementById("root")
 );

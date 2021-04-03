@@ -7,14 +7,23 @@ import { useCustomState } from "webapp/cmm/state/state";
 import Logo from 'webapp/cmm/elements/Logo/Logo'
 import { Button } from '@material-ui/core'
 import Icon from "@material-ui/icons/DirectionsBus"
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "webapp/_actions";
 
 export default ({ data = [] }) => {
   const [sticky, setSticky] = useState(false);
   const actions = useCustomState()[1];
+  const currentUser = useSelector(state=>state.accountReducer.currentUser)
+  const dispatch = useDispatch()
 
   const handleResize = () => {
     setSticky(window.pageYOffset > 200 ? true : false);
   };
+  const handleLogout = (e) =>{
+    e.preventDefault()
+    localStorage.removeItem('accessToken')
+    dispatch(logout())
+  }
 
   useEffect(() => {
     window.addEventListener("scroll", handleResize);
@@ -62,14 +71,21 @@ export default ({ data = [] }) => {
         <ul className={styles.menu}>{menu}</ul>
 
         <div className={styles.btn_desktop}>
+          {currentUser==null?
           <Link url="/login">
             <Button style={{
               borderRadius: 20,
               backgroundColor: "#FFEA00",
               padding: "8px 16px",
               fontSize: "14px"
-            }} variant="contained" size="large" startIcon={<Icon />}>간편 가입</Button>
-          </Link>
+            }} variant="contained" size="large" startIcon={<Icon />}>간편 로그인</Button>
+          </Link>:
+          <Button style={{
+            borderRadius: 20,
+            backgroundColor: "#FFEA00",
+            padding: "8px 16px",
+            fontSize: "14px"
+          }} onClick = {handleLogout} variant="contained" size="large" startIcon={<Icon />}>로그아웃</Button>}
         </div>
 
         <div
