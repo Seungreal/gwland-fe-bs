@@ -22,14 +22,17 @@ export default ()=>{
                 alert('삭제성공'),
                 window.location.reload()
             )
+            .catch(err=>alert(err))
         }
     }
 
     useEffect(()=>{
         axios.get(process.env.REACT_APP_URL+`/survey/count`)
         .then(res=>{setSurveyCount(res.data)})
+        .catch(err=>alert(err))
         axios.get(process.env.REACT_APP_URL+`/survey/list?page=${currentPage-1}&size=${pageSize}`)
         .then(res=>{setSurveyList(res.data.content)})
+        .catch(err=>alert(err))
     },[currentPage])
 
     const title = <h3>설문 리스트</h3>

@@ -11,12 +11,12 @@ let state = {
         url: "/",
       },
       {
-        name: "설문하기",
+        name: "코스추천",
         url: "/survey",
       },
       {
         name: "코스관리",
-        url: "/course",
+        url: "/mypage",
       },
       {
         name: "관광지",

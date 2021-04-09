@@ -42,7 +42,6 @@ export default () => {
           })
           .then(res => {
             const detail = res.response.body.items.item
-            console.log(detail.contentid)
             axios.put(process.env.REACT_APP_URL+'/place/updateOverview',{
               contentid:contentid,
               overview:detail.overview.slice(0,100),

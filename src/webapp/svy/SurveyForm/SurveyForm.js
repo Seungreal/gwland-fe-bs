@@ -16,7 +16,13 @@ export default ()=>{
 	const history = useHistory()
 
     const handlePrev = ()=>{setStep(prevStep=>prevStep-1)}
-    const handleNext = ()=>{setStep(prevStep=>prevStep+1)}
+    const handleNext = ()=>{
+		if(step===3 && ! theme.length){
+			alert(`1개이상 선택 해주세요.`)
+		}else{
+			setStep(prevStep => prevStep + 1) 
+		}
+	}
     const handleGender = (e)=>{setGender(e.target.value)}
     const handleAge = (e)=>{setAge(e.target.value)}
     const handleSeason = (e)=>{setSeason(e.target.value)}
@@ -35,13 +41,17 @@ export default ()=>{
     const handleLocation = (e)=>{setLocation(e.target.value)}
     const submitSvy = (e)=>{
         e.preventDefault()
-        Axios.post(process.env.REACT_APP_URL+'/survey/save',{
-            gender,age,season,partner,duration,location,
-			theme1:theme[0],
-			theme2:theme[1],
-			theme3:theme[2]
-        }).then((res)=>{history.push("/survey/result",{recomList:res.data})})
-        .catch((err)=>{alert(err)})
+		if (location !== '5') {
+			alert(`현재 속초밖에 서비스 되지 않습니다.`)
+		} else {
+			Axios.post(process.env.REACT_APP_URL+'/survey/save',{
+				gender,age,season,partner,duration,location,
+				theme1:theme[0],
+				theme2:theme[1],
+				theme3:theme[2]
+			}).then((res)=>{history.push("/survey/result",{recomList:res.data})})
+			.catch((err)=>{alert(err)})
+		}
     }
 
     return <>

@@ -24,6 +24,7 @@ export default ({location})=>{
                 Authorization:'Bearer '+ localStorage.getItem('accessToken')
             }
         }).then(resp=>dispatch(login(resp.data)))
+        .catch(err=>alert(err))
         return <Redirect to={{
             pathname: "/",
             state: { from: location }

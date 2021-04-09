@@ -18,7 +18,6 @@ export default () => {
   useEffect(()=> {
     axios.get(process.env.REACT_APP_URL+`/place/one/${contentid}`)
     .then((resp)=>{
-      console.log(resp.data)
       setPlace(resp.data)
       
     })

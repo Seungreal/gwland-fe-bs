@@ -11,8 +11,7 @@ import PlacePage from "webapp/pce/pages/PlacePage";
 import OAuth2RedirectHandler from "webapp/cmm/lib/OAuth2RedirectHandler";
 import { useSelector } from "react-redux";
 import { SurveyPage } from "webapp/svy";
-import { CoursePage } from "webapp/crs";
-import { LoginForm } from "webapp/usr";
+import { LoginForm, UserPage } from "webapp/usr";
 
 export default () => {
   const state = useCustomState()[0]
@@ -24,7 +23,7 @@ export default () => {
     <Switch>
       <Route path="/" exact component={Home} />
       <Route path="/survey" component={SurveyPage} />
-      <AuthRoute auth="USER" current={currentRole} path="/course" component={CoursePage}/>
+      <AuthRoute auth="USER" current={currentRole} path="/mypage" component={UserPage}/>
       <Route path="/place" component={PlacePage}/>
       <AuthRoute auth="ADMIN" current={currentRole} path="/manage" component={ManagePage} />
       <Route path="/login" exact component={LoginForm}/>

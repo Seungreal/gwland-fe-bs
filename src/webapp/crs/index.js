@@ -1,3 +1,3 @@
-import CoursePage from './CoursePage/CoursePage'
+import CourseList from './CourseList/CourseList'
 
-export {CoursePage}
+export {CourseList}

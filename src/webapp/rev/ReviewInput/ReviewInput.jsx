@@ -10,7 +10,6 @@ export default () => {
     const [textlength, setLength] = useState(0)
     const textArray = ['진짜 별로에요...', '별로에요...', '그냥 그래요.', '좋아요!', '너무 좋아요!!']
     const ratingChanged = (newRating) => { 
-        console.log(newRating)
         setRate(newRating); };
     useEffect(() => { setLength(textsection.length) }, [textsection])
 

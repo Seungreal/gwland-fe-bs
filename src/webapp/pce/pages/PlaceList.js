@@ -46,7 +46,6 @@ export default ({ sidebar = "left", layout = "grid", title = "title" }) => {
     }else{
     axios.get(process.env.REACT_APP_URL+'/place/list')
     .then(resp=>{
-      console.log(resp.data)
       setPlaceArray(
         resp.data.map((post, index) => {
           return (

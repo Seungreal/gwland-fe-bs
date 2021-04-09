@@ -22,7 +22,6 @@ export default () => {
       axios.delete(process.env.REACT_APP_URL+'/user/delete', {
         data: { num: user.num } })
         .then((response) => {
-          console.log(response.data)
           alert(`${user.username}고객님 정보를 삭제하셨습니다.`)
           window.location.reload()
         })
