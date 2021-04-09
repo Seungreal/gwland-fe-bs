@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./BlogCard.module.scss";
 import { Link } from "react-router-dom";
-import { Button } from "components/elements";
+import { Button } from "webapp/cmm/elements";
 import CardImage from "../CardImage/CardImage";
 
 export default ({ post, layout = "grid" }) => {
@@ -20,7 +20,7 @@ export default ({ post, layout = "grid" }) => {
         <p>{post.short}</p>
 
         <div className={styles.btn}>
-          <Button to={"/place/" + post.contentid} hoverType="solid-gray-tb">
+          <Button to={"/place/detail/" + post.contentid} hoverType="solid-gray-tb">
             Read More
           </Button>
         </div>

@@ -4,7 +4,49 @@ import axios from "axios";
 let listeners = [];
 
 let state = {
-  data: null,
+  data: {
+    menu: [
+      {
+        name: "홈",
+        url: "/",
+      },
+      {
+        name: "설문하기",
+        url: "/survey",
+      },
+      {
+        name: "코스관리",
+        url: "/course",
+      },
+      {
+        name: "관광지",
+        url: "/place",
+      },
+      {
+        name: "관리자",
+        url: "/manage",
+      },
+    ],
+    categories: [
+      {
+        id: "0",
+        title: "Product",
+      },
+      {
+        id: "1",
+        title: "Project",
+      },
+      {
+        id: "2",
+        title: "Review",
+      },
+      {
+        id: "3",
+        title: "Article",
+      },
+    ],
+  },
+  
   error: null,
   sidebar: false,
   modal: false,

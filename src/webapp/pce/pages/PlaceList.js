@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback, Fragment } from "react";
 import styles from "../styles/PlaceList.module.scss";
-import { useCustomState } from "webapp/cmm/state/state";
+import { useCustomState } from "state/state";
 import { useParams, useRouteMatch } from "react-router-dom";
 import { animateScroll as scroll } from "react-scroll";
 
@@ -8,13 +8,13 @@ import {
   BlogPagination,
   BlogFeatured,
   BlogSearch,
-} from "components/pages/Blog/components";
+} from "webapp/pce";
 
 import  Header  from "webapp/cmm/widgets/Header/Header";
 import BlogCard from "../BlogCard/BlogCard";
 import axios from "axios";
 import BlogCategories from "../BlogCategories/BlogCategories";
-import Button from 'components/elements/Button/Button'
+import {Button} from 'webapp/cmm/elements'
 
 export default ({ sidebar = "left", layout = "grid", title = "title" }) => {
   const state = useCustomState()[0];
@@ -30,7 +30,7 @@ export default ({ sidebar = "left", layout = "grid", title = "title" }) => {
 
   useEffect(() => {
     if(category){
-      axios.get(`/place/cat/${category}`)
+      axios.get(process.env.REACT_APP_URL+`/place/cat/${category}`)
       .then((data)=>{
         setPlaceArray(
           data.data.map((post, index) => {
@@ -44,7 +44,7 @@ export default ({ sidebar = "left", layout = "grid", title = "title" }) => {
         );
       })
     }else{
-    axios.get('/place/list')
+    axios.get(process.env.REACT_APP_URL+'/place/list')
     .then(resp=>{
       console.log(resp.data)
       setPlaceArray(

@@ -1,10 +1,10 @@
 import React, { Fragment, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "../styles/PlaceDetail.module.scss";
-import { Header } from "components/widgets";
+import { Header } from "webapp/cmm/widgets";
 import { useParams } from "react-router-dom";
 import { useCustomState } from "state/state";
-import Layout from "components/layouts/Layout/Layout";
+import {Layout} from "webapp/cmm/layouts";
 import THEME from "state/theme";
 import axios from "axios";
 
@@ -16,7 +16,7 @@ export default () => {
 
   
   useEffect(()=> {
-    axios.get(`/place/find/${contentid}`)
+    axios.get(process.env.REACT_APP_URL+`/place/one/${contentid}`)
     .then((resp)=>{
       console.log(resp.data)
       setPlace(resp.data)

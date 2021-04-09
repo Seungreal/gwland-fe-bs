@@ -1,6 +1,6 @@
 import React from "react";
+import { Layout } from "webapp/cmm/layouts";
 import styles from "./Header.module.scss";
-import Layout from "../../layouts/Layout/Layout";
 
 export default ({ children, img }) => {
   return (

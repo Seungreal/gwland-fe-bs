@@ -2,7 +2,7 @@ import {combineReducers} from 'redux'
 
 const initialState = {
     currentUser: null,
-    authorization: "public"
+    authorization: ["PUBLIC"]
 }
 
 const accountReducer = (state=initialState,action) => {

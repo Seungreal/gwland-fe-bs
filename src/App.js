@@ -1,77 +1,34 @@
-import React, { useEffect, Fragment } from "react";
+import React from "react";
 import { Switch, Route } from "react-router-dom";
 
-import {
-  Blog,
-  PostSingle,
-  ServiceSingle,
-  MemberCard,
-  PortfolioSingle
-} from "./components/pages";
-import Home from './webapp/cmm/pages/Home'
-import SurveyPage from './webapp/svy/pages/SurveyPage'
-import Course from './webapp/crs/pages/Course'
-import ManagePage from 'webapp/mng/pages/ManagePage'
-import Sidebar from './webapp/cmm/layouts/Sidebar/Sidebar'
-import Header from './webapp/cmm/layouts/Header/Header'
-import {useCustomState} from './webapp/cmm/state/state'
-import AuthRoute from "webapp/usr/components/AuthRoute";
-import LoginForm from "webapp/usr/pages/LoginForm";
+import {Home} from 'webapp/cmm/pages'
+import {ManagePage} from 'webapp/mng'
+import Sidebar from 'webapp/cmm/layouts/Sidebar/Sidebar'
+import Header from 'webapp/cmm/layouts/Header/Header'
+import {useCustomState} from 'state/state'
+import AuthRoute from "webapp/cmm/lib/AuthRoute";
 import PlacePage from "webapp/pce/pages/PlacePage";
-import ReviewInput from "webapp/rev/pages/ReviewInput"
-import ReviewList from "webapp/rev/pages/ReviewList";
-import Profile from "webapp/usr/pages/Profile";
-import OAuth2RedirectHandler from "webapp/usr/components/OAuth2RedirectHandler";
+import OAuth2RedirectHandler from "webapp/cmm/lib/OAuth2RedirectHandler";
+import { useSelector } from "react-redux";
+import { SurveyPage } from "webapp/svy";
+import { CoursePage } from "webapp/crs";
+import { LoginForm } from "webapp/usr";
 
 export default () => {
   const state = useCustomState()[0]
-  
-  return <Fragment>
+  const currentRole = useSelector(state=>state.accountReducer.authorization)
+
+  return <>
     <Sidebar data={state.data.menu}/>
     <Header data={state.data.menu}/>
     <Switch>
       <Route path="/" exact component={Home} />
-      <Route path="/survey" exact component={SurveyPage} />
-      <AuthRoute authenticated={null} path="/course" componet={Course}/>
+      <Route path="/survey" component={SurveyPage} />
+      <AuthRoute auth="USER" current={currentRole} path="/course" component={CoursePage}/>
       <Route path="/place" component={PlacePage}/>
+      <AuthRoute auth="ADMIN" current={currentRole} path="/manage" component={ManagePage} />
       <Route path="/login" exact component={LoginForm}/>
-      <Route path="/manage" component={ManagePage} />
-
-
-      <Route path="/test" component={ReviewInput}/>
       <Route path="/oauth2/redirect" component={OAuth2RedirectHandler}/>
-      <Route path="/profile" component={Profile}/>
-      
-
-
-      <Route path="/blog/:post_id" exact component={PostSingle} />
-      <Route
-        path="/services/:service_id"
-        exact
-        component={ServiceSingle}
-      />
-      <Route path="/team/:member_id" exact component={MemberCard} />
-      <Route
-        path="/portfolio/:project_id"
-        exact
-        component={PortfolioSingle}
-      />
-
-      <Route path="/blog/cats/:category" exact>
-        <Blog sidebar="left" layout="grid" />
-      </Route>
-
-      <Route path="/blog/user/:author" exact>
-        <Blog sidebar="left" layout="grid" />
-      </Route>
-
-      <Route path="/blog/date/:posting_date" exact>
-        <Blog sidebar="left" layout="grid" />
-      </Route>
-
-      <Route path="/blog/search/:query" exact>
-        <Blog sidebar="left" layout="grid" />
-      </Route>
     </Switch>
-  </Fragment>;
+  </>;
 };

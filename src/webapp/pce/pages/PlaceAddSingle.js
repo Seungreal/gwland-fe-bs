@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { Header } from "components/widgets";
+import { Header } from "webapp/cmm/widgets";
 import { useCustomState } from "state/state";
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
@@ -41,7 +41,7 @@ export default () => {
 
   const save = e => {
     e.preventDefault()
-    axios.post(`/place/save`, {
+    axios.post(process.env.REACT_APP_URL+`/place/save`, {
       addr1, addr2, areacode, cat1, cat2, cat3, contentid, contenttypeid, createdtime, firstimage,
       firstimage2, mapx, mapy, mlevel, modifiedtime, sigungucode, tel, title, zipcode,
       proxy: {
