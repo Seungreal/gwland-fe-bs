@@ -323,7 +323,7 @@ export default ()=>{
 												<label for="course6_6">태백</label>
 											</li>
 											<li class="check_course">
-												<input type="radio" value="속초" id="course6_7" checked={location==='속초'} onChange={handleLocation}/>
+												<input type="radio" value="5" id="course6_7" checked={location==='5'} onChange={handleLocation}/>
 												<label for="course6_7">속초</label>
 											</li>
 											<li class="check_course">
