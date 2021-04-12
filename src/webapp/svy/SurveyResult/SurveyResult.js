@@ -8,7 +8,7 @@ export default ()=>{
     const recomList = location.state.recomList
 
     return <>
-        <div className={styles.resultWrap}>
+        <div className={styles.wrap}>
             <div>
                 {recomList.map((recom,i)=>{
                     return <RecomBox recom={recom} index={i}/>

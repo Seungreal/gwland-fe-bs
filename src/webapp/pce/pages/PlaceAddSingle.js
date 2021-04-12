@@ -60,7 +60,7 @@ export default () => {
 
   return (
     <Fragment>
-      <Header img={state.data.header_bgs.contacts}>관광지 개별입력</Header>
+      <Header>관광지 개별입력</Header>
       <div>  
       <form className={classes.root} noValidate autoComplete="off">
       <TextField name="addr1" style={{ fontSize: '60px' }} label="addr1" placeholder="addr1" onChange = { e => { setAddr1(`${e.target.value}`) }}/>

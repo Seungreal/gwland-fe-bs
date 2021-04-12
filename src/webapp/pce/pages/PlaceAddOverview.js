@@ -45,7 +45,7 @@ export default () => {
 
   return (
     <Fragment>
-      <Header img={state.data.header_bgs.contacts}>관광지 개요 입력</Header>
+      <Header>관광지 개요 입력</Header>
       <div>  
       <form className={classes.root} noValidate autoComplete="off">
       <TextField name="contentid" label="contentid" placeholder="contentid" onChange = { e => { setContentid(`${e.target.value}`) }}/>

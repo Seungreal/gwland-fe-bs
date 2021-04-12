@@ -12,7 +12,6 @@ import OAuth2RedirectHandler from "webapp/cmm/lib/OAuth2RedirectHandler";
 import { useSelector } from "react-redux";
 import { SurveyPage } from "webapp/svy";
 import { LoginForm, UserPage } from "webapp/usr";
-import { CourseDetail, CoursePage } from "webapp/crs";
 
 export default () => {
   const state = useCustomState()[0]
@@ -24,7 +23,6 @@ export default () => {
     <Switch>
       <Route path="/" exact component={Home} />
       <Route path="/survey" component={SurveyPage} />
-      <Route path="/course" component={CoursePage}/>
       <AuthRoute auth="USER" current={currentRole} path="/mypage" component={UserPage}/>
       <Route path="/place" component={PlacePage}/>
       <AuthRoute auth="ADMIN" current={currentRole} path="/manage" component={ManagePage} />

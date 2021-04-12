@@ -41,7 +41,7 @@ export default ()=>{
     const handleLocation = (e)=>{setLocation(e.target.value)}
     const submitSvy = (e)=>{
         e.preventDefault()
-		if (location !== '5') {
+		if (location !== '속초') {
 			alert(`현재 속초밖에 서비스 되지 않습니다.`)
 		} else {
 			Axios.post(process.env.REACT_APP_URL+'/survey/save',{
@@ -323,7 +323,7 @@ export default ()=>{
 												<label for="course6_6">태백</label>
 											</li>
 											<li class="check_course">
-												<input type="radio" value="5" id="course6_7" checked={location==='5'} onChange={handleLocation}/>
+												<input type="radio" value="속초" id="course6_7" checked={location==='속초'} onChange={handleLocation}/>
 												<label for="course6_7">속초</label>
 											</li>
 											<li class="check_course">
